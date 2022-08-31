@@ -32,3 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector('.js-static-modal-toggle').addEventListener('click', function () {
   new Modal({ el: document.getElementById('static-modal') }).show();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, options);
+});

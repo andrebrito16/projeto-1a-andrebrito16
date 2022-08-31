@@ -38,6 +38,8 @@ while True:
         delete_id = route.split('/')[-1].split('?')[0]
         database_instance.delete(delete_id)
         response = index(request, database_instance)
+    elif route.startswith('edit'):
+        response = index(request, database_instance)
     else:
         response = build_response()
 
