@@ -1,25 +1,33 @@
-<div class="card">
-  <h3 class="card-title">{title}</h3>
-  <form action="/delete/{id}" method="get">
-    <button type="submit" class="delete-note">
-      <i class="fas fa-trash-alt"></i>
-    </button>
-  </form>
-  <div class=" card-content">
-    <p>{details}</p>
+<div class="group relative w-80">
+
+  <div class="card">
+    <h3 class="card-title">{title}</h3>
+    <div class="card-content">
+      <p>{details}</p>
+    </div>
+
+    <!-- Modal toggle -->
+    <div class="flex flex-row justify-between">
+      <button
+        class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button" data-modal-toggle="defaultModal-{id}">
+        Editar nota
+      </button>
+      <form action="/delete/{id}" method="get">
+
+        <button
+          class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          type="button" data-modal-toggle="deleteModal-{id}">
+          <i class="fas fa-trash-alt"></i> Deletar nota
+        </button>
+      </form>
+    </div>
+
+
   </div>
-
-  <!-- Modal toggle -->
-  <button
-    class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-    type="button" data-modal-toggle="defaultModal-{id}">
-    Toggle modal
-  </button>
-
-
 </div>
 
-<!-- Main modal -->
+<!-- Edit modal -->
 <div id="defaultModal-{id}" tabindex="-1" aria-hidden="true"
   class="absolute hidden overflow-y-auto overflow-x-hidden top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
   <div class="modal-dialog absolute w-auto pointer-events-none">
@@ -103,6 +111,63 @@
      duration-150
      ease-in-out
      ml-1">Editar nota</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete modal -->
+<div id="deleteModal-{id}" tabindex="-1" aria-hidden="true"
+  class="absolute hidden overflow-y-auto overflow-x-hidden top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+  <div class="modal-dialog absolute w-auto pointer-events-none">
+    <div
+      class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+      <div
+        class="modal-header min-w-12 flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+        <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel">Tem certeza que deseja
+          deletar essa nota?</h5>
+      </div>
+      <div class="modal-body relative p-4">
+        <form action="/delete/{id}" method="get">
+      </div>
+      <div
+        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+        <button type="button" class="px-6
+         py-2.5
+         bg-gray-600
+         text-white
+         font-medium
+         text-xs
+         leading-tight
+         uppercase
+         rounded
+         shadow-md
+         hover:bg-gray-700 hover:shadow-lg
+         focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0
+         active:bg-gray-800 active:shadow-lg
+         transition
+         duration-150
+         ease-in-out" data-modal-toggle="deleteModal-{id}">Cancelar</button>
+
+
+        <button type="submit" class="px-6
+     py-2.5
+     bg-red-600
+     text-white
+     font-medium
+     text-xs
+     leading-tight
+     uppercase
+     rounded
+     shadow-md
+     hover:bg-red-700 hover:shadow-lg
+     focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0
+     active:bg-red-800 active:shadow-lg
+     transition
+     duration-150
+     ease-in-out
+     ml-1">Deletar</button>
         </form>
       </div>
     </div>
