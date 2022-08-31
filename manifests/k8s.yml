@@ -1,0 +1,17 @@
+#@data/values
+---
+port: 8080
+
+env:
+  - name: TZ
+    value: America/Sao_Paulo
+
+ingress:
+  enable: true
+  type: traefik
+  
+  tls:
+    enable: true
+    domain: andrefb.tech
+    letsencrypt:
+      enable: true

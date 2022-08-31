@@ -16,6 +16,7 @@ def index(request, db):
         headers = 'Location: /'
 
     if request.startswith('POST') and not request.split(' ')[1].startswith('/edit'):
+        print(request)
         request = request.replace('\r', '')
         partes = request.split('\n\n')
         corpo = partes[1]
