@@ -26,6 +26,7 @@ jobs:
 
   SVC:
     uses:  andrebrito16/ab-actions-pipelines/.github/workflows/svc.yml@master
+    secrets: inherit
     with:
       mainBranch: main
       platforms: linux/amd64,linux/arm64
