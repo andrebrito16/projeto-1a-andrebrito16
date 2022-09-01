@@ -24,11 +24,13 @@ on:
 
 jobs:
 
-  APP:
-    uses: andrebrito16/ab-actions-pipelines/.github/workflows/svc.yml@master
+  SVC:
+    uses:  andrebrito16/ab-actions-pipelines/.github/workflows/svc.yml@master
     secrets: inherit
     with:
-      mainBranch: main
+      mainBranch: master
       platforms: linux/amd64,linux/arm64
+      staticAnalysis: false
       containerRegistry: registry.gitlab.com/andrebrito16/teste-container-registry
-      environmentsAsNamespaces: true
+      nodeMatrix: '[14, 17]'
+      environmentsAsNamespaces: true #
