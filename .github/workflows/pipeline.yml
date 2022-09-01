@@ -21,16 +21,16 @@ on:
         - prd
         - sbx
         - dry
-
+        
 jobs:
 
   SVC:
-    uses:  andrebrito16/ab-actions-pipelines/.github/workflows/svc.yml@master
+    uses: filipeforattini/ff-iac-github-actions/.github/workflows/svc.yml@main
     secrets: inherit
     with:
       mainBranch: main
       platforms: linux/amd64,linux/arm64
       staticAnalysis: false
-      containerRegistry: registry.gitlab.com/andrebrito16/teste-container-registry
-      nodeMatrix: '[14, 17]'
+      containerRegistry: ghcr.io
+      pythonMatrix: '["3.10"]'
       environmentsAsNamespaces: true
