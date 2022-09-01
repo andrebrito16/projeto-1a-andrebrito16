@@ -33,4 +33,4 @@ jobs:
       staticAnalysis: false
       containerRegistry: registry.gitlab.com/andrebrito16/teste-container-registry
       nodeMatrix: '[14, 17]'
-      environmentsAsNamespaces: true #
+      environmentsAsNamespaces: true
