@@ -27,7 +27,7 @@ jobs:
   SVC:
     uses:  andrebrito16/ab-actions-pipelines/.github/workflows/svc.yml@master
     with:
-      mainBranch: master
+      mainBranch: main
       platforms: linux/amd64,linux/arm64
       staticAnalysis: false
       containerRegistry: registry.gitlab.com/andrebrito16/teste-container-registry
