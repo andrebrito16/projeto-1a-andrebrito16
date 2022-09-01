@@ -23,7 +23,7 @@ while True:
     client_connection, client_address = server_socket.accept()
     print("Connection from: ", client_address)
 
-    request = client_connection.recv(1024).decode()
+    request = client_connection.recv(2048).decode()
 
     response = 'HTTP/1.1 200 OK\n\nHello World'
 
